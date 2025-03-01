@@ -6,12 +6,15 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 // Handle preflight requests
 export async function OPTIONS() {
   return new Response(null, { status: 204, headers: corsHeaders });
 }
 
 export async function GET() {
+  await delay(1000);
   const type: "email" | "phone" = Math.random() > 0.5 ? "email" : "phone";
   return NextResponse.json({ type }, { status: 200, headers: corsHeaders });
 }
@@ -22,6 +25,7 @@ interface WaitlistRequest {
 }
 
 export async function POST(req: NextRequest) {
+  await delay(2000);
   try {
     const body: WaitlistRequest = await req.json();
 
