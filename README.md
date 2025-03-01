@@ -1,5 +1,9 @@
 # **Waitlist Form Implementation**
 
+https://github.com/user-attachments/assets/2d0c782b-5c92-40de-b5e4-47515cbf0676
+
+---
+
 Your task is to implement a **Waitlist Signup Form** that allows users to join a waitlist by providing either their **email** or **phone number**. The form should:
 
 1. **Fetch the initial waitlist form type** (`email` or `phone`) from the API.
