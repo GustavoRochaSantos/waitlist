@@ -15,8 +15,13 @@ export async function OPTIONS() {
 
 export async function GET() {
   await delay(1000);
+  const minSeconds = 30; // 30 seconds
+  const maxSeconds = 180; // 3 minutes
+  const randomExpiration = Math.floor(Math.random() * (maxSeconds - minSeconds + 1)) + minSeconds;
+  const expiresAt = Date.now() + randomExpiration * 1000;
   const type: "email" | "phone" = Math.random() > 0.5 ? "email" : "phone";
-  return NextResponse.json({ type }, { status: 200, headers: corsHeaders });
+
+  return NextResponse.json({ type, expiresAt }, { status: 200, headers: corsHeaders });
 }
 
 interface WaitlistRequest {
