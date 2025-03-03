@@ -4,7 +4,11 @@ https://github.com/user-attachments/assets/2d0c782b-5c92-40de-b5e4-47515cbf0676
 
 ---
 
-Your task is to implement a **Waitlist Signup Form** that allows users to join a waitlist by providing either their **email** or **phone number**. The form should:
+Your task is to implement a **Waitlist Form**, where users can join the waitlist using either **email** or **phone number**.
+
+The **initial form type** (`email` or `phone`) **must be dynamically fetched from the API**. When the page loads, the application should make a request to the API and render the corresponding input field based on the response.
+
+Once displayed, the form should allow users to manually switch between email and phone using a toggle button.
 
 1. **Fetch the initial waitlist form type** (`email` or `phone`) from the API.
 2. **Render the corresponding input field** based on the API response.
