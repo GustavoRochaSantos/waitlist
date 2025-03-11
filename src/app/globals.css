@@ -17,6 +17,11 @@
   }
 }
 
+
+.buttonIcon {
+  @apply rounded-full p-3 text-white text-2xl h-12 drop-shadow-md;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

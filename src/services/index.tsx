@@ -1,11 +1,11 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'https://bucketlisterswaitlist.vercel.app/api'
+  baseURL: 'https://bucketlisterswaitlist.vercel.app'
 })
 
 api.interceptors.request.use(async (config) => {
-
+  console.log(config)
   return config
 })
 
